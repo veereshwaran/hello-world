@@ -1,0 +1,28 @@
+---
+platforms:
+  helloworld:
+    pack: prana/tomcat:2
+    major_version: '1'
+    variables:
+      artifactId: helloworld
+      groupId: com.appranix
+      extension: war
+      appVersion: 1.0.3
+      deployContext: helloworld
+    components:
+      artifact/prana.1.Artifact:
+        artifact:
+          url: http://i00039.hosts.appranix.info:8081
+          repository: releases
+          username: admin
+          location: $AX_LOCAL{groupId}:$AX_LOCAL{artifactId}:$AX_LOCAL{extension}
+          version: $AX_LOCAL{appVersion}
+          install_dir: /app/$AX_LOCAL{artifactId}
+          as_user: user
+          as_group: user
+          restart: "execute \"rm -rf /opt/tomcat7/webapps/$AX_LOCAL{deployContext}\" \nexecute \"ln -s /app/$AX_LOCAL{artifactId}/releases/$AX_LOCAL{appVersion} /opt/tomcat7/webapps/$AX_LOCAL{deployContext}\""
+      tomcat/prana.1.Tomcat:
+        tomcat:
+          tomcat_user: user
+          tomcat_group: user
+          autodeploy_enabled: true
