@@ -32,7 +32,7 @@ node {
                 sh "prana design variable update -a demo --platform=helloworld appVersion=${env.BUILD_ID}"
                 sh "prana design commit init-commit"
                 sh "prana transition pull -e dev"
-                sh "prana transition commit init-commit -e env"
+                sh "prana transition commit init-commit -e dev"
                 sh "prana transition deployment create -e dev"
             }
    }
