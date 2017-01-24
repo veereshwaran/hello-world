@@ -16,7 +16,7 @@ node {
          nexusVersion: 'nexus2',
          protocol: 'http',
          repository: 'releases',
-         version: '1.0.8'
+         version: '1.0.9'
    }
 
    stage('Deploy to Prana') {

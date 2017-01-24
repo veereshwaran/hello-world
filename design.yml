@@ -5,9 +5,9 @@ platforms:
     major_version: '1'
     variables:
       artifactId: helloworld
-      groupId: com.appranix
+      groupId: gowtham.appranix
       extension: war
-      appVersion: 1.0.8
+      appVersion: 1.0.9
       deployContext: helloworld
     components:
       artifact/prana.1.Artifact:
