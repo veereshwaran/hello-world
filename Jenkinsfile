@@ -7,15 +7,15 @@ node {
 
    stage('Publish to nexus') {
       nexusArtifactUploader artifacts: [[
-                                         artifactId: 'helloworld', classifier: '', 
+                                         artifactId: 'helloworld', classifier: '',
                                          file: 'target/helloworld-1.0.3.war', type: 'war'
-                                       ]], 
-         credentialsId: 'nexus', 
-         groupId: 'gowtham.appranix', 
-         nexusUrl: 'i00039.hosts.appranix.info:8081/nexus', 
-         nexusVersion: 'nexus2', 
-         protocol: 'http', 
-         repository: 'releases', 
+                                       ]],
+         credentialsId: 'nexus',
+         groupId: 'gowtham.appranix',
+         nexusUrl: 'i00039.hosts.appranix.info:8081/nexus',
+         nexusVersion: 'nexus2',
+         protocol: 'http',
+         repository: 'releases',
          version: '1.0.6'
    }
 
@@ -32,6 +32,7 @@ node {
                 sh "prana design commit init-commit"
                 sh "prana transition pull -e dev"
                 sh "prana transition commit init-commit"
+                sh "prana transition deployment create -e dev"
             }
        echo 'Deploy to assembly'
    }
