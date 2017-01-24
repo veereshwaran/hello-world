@@ -29,7 +29,7 @@ node {
                 sh "prana config set organization=devorg-veeresh -g"
                 sh "prana config set assembly=demo -g"
                 sh "prana design load design.yml"
-                sh "prana design platform variable update -a demo [-p helloworld] appVersion=${env.BUILD_ID}"
+                sh "prana design platform variable update -a demo --platform=helloworld appVersion=${env.BUILD_ID}"
                 sh "prana design commit init-commit"
                 sh "prana transition pull -e dev"
                 sh "prana transition commit init-commit -e env"
