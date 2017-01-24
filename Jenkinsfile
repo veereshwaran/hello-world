@@ -20,6 +20,7 @@ node {
             classifier('debug')
             file('target/helloworld-1.0.3.war')
         }
+       }
    }
 
    stage('Deploy to assembly') {
