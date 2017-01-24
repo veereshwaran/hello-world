@@ -10,6 +10,12 @@ node {
    }
 
    stage('Deploy to assembly') {
+      withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'ci-appranix',
+                            usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+                //available as an env variable, but will be masked if you try to print it out any which way
+                sh 'echo $PASSWORD'
+                echo "${env.USERNAME}"
+            }
        sh "prana"
        echo 'Deploy to assembly'
    }
