@@ -10,6 +10,7 @@ node {
    }
 
    stage('Deploy to assembly') {
+       sh "prana"
        echo 'Deploy to assembly'
    }
 
