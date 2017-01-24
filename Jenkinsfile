@@ -1,10 +1,6 @@
 node {
    stage('Build') {
-        if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' install"
-      } else {
-         bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-      }
+         sh "mvn install"
    }
 
    stage('Push to nexus') {
