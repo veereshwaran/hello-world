@@ -16,7 +16,7 @@ node {
          nexusVersion: 'nexus2', 
          protocol: 'http', 
          repository: 'releases', 
-         version: '1.0.4'
+         version: '1.0.5'
    }
 
    stage('Deploy to assembly') {
