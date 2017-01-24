@@ -28,8 +28,10 @@ node {
                 sh 'pwd'
                 sh 'prana config set site=https://app.appranix.net/web/ -l'
                 sh "prana auth login --username=$USERNAME --password=$PASSWORD --account=devorg"
+                sh "prana config set organization=devorg-veeresh"
+                sh "prana config set assembly=test"
+                sh "prana design load design.yml"
             }
-       sh 'prana'
        echo 'Deploy to assembly'
    }
 
