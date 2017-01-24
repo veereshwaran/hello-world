@@ -25,7 +25,6 @@ node {
                 //available as an env variable, but will be masked if you try to print it out any which way
                 sh 'echo $PASSWORD'
                 echo "${env.USERNAME}"
-                sh 'prana auth login'
             }
        sh 'prana auth login'
        echo 'Deploy to assembly'
