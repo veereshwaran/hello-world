@@ -23,7 +23,7 @@ node {
       withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'ci-appranix',
                             usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
                 //available as an env variable, but will be masked if you try to print it out any which way
-                set +x
+                sh 'echo uname=$USERNAME pwd=$PASSWORD'
                 sh 'echo $PASSWORD'
                 echo "${env.USERNAME}"
                 sh 'pwd'
