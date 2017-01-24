@@ -11,12 +11,12 @@ node {
                                          file: 'target/helloworld-1.0.3.war', type: 'war'
                                        ]], 
          credentialsId: 'nexus', 
-         groupId: 'com.appranix', 
+         groupId: 'gowtham.appranix', 
          nexusUrl: 'i00039.hosts.appranix.info:8081/nexus', 
          nexusVersion: 'nexus2', 
          protocol: 'http', 
          repository: 'releases', 
-         version: '1.0.5'
+         version: '1.0.6'
    }
 
    stage('Deploy to assembly') {
