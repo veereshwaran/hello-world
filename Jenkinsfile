@@ -1,6 +1,6 @@
 node {
    stage('Build') {
-       echo 'maven build'
+       echo 'maven build test'
    }
 
    stage('Push to nexus') {
