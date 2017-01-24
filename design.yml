@@ -4,10 +4,10 @@ platforms:
     pack: prana/tomcat:2
     major_version: '1'
     variables:
-      artifactId: helloworld
+      artifactId: quick-demo-app
       groupId: com.appranix
       extension: war 
-      deployContext: helloworld
+      deployContext: quick-demo-app
     components:
       artifact/prana.1.Artifact:
         artifact:
