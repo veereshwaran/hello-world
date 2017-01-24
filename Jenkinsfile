@@ -5,26 +5,8 @@ node {
          archive 'target/*.jar'
    }
 
-   stage('Publish') {
-       freeStyleJob('NexusArtifactUploaderJob') {
-    steps {
-      nexusArtifactUploader {
-        nexusVersion('nexus2')
-        protocol('http')
-        nexusUrl('i00039.hosts.appranix.info:8081/nexus')
-        groupId('sp.sd')
-        version('2.4')
-        repository('releases')
-        credentialsId('nexus')
-        artifact {
-            artifactId('nexus-artifact-uploader')
-            type('jar')
-            classifier('debug')
-            file('nexus-artifact-uploader.jar')
-        }
-      }
-    }
-}
+   stage('Publish to nexus') {
+      nexusArtifactUploader artifacts: [[artifactId: 'hello', classifier: '', file: 'target/*.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.appranix', nexusUrl: 'i00039.hosts.appranix.info:8081/nexus/', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '1'
    }
 
    stage('Deploy to assembly') {
