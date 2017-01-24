@@ -5,7 +5,7 @@ platforms:
     major_version: '1'
     variables:
       artifactId: helloworld
-      groupId: gowtham.appranix
+      groupId: com.appranix
       extension: war 
       deployContext: helloworld
     components:
