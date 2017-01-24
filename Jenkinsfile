@@ -6,21 +6,25 @@ node {
    }
 
    stage('Publish') {
-       nexusArtifactUploader {
+       freeStyleJob('NexusArtifactUploaderJob') {
+    steps {
+      nexusArtifactUploader {
         nexusVersion('nexus2')
         protocol('http')
-        nexusUrl('i00039.hosts.appranix.info:8081/nexus/')
+        nexusUrl('i00039.hosts.appranix.info:8081/nexus')
         groupId('sp.sd')
         version('2.4')
         repository('releases')
         credentialsId('nexus')
         artifact {
-            artifactId('hello')
-            type('war')
+            artifactId('nexus-artifact-uploader')
+            type('jar')
             classifier('debug')
-            file('target/helloworld-1.0.3.war')
+            file('nexus-artifact-uploader.jar')
         }
-       }
+      }
+    }
+}
    }
 
    stage('Deploy to assembly') {
