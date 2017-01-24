@@ -16,7 +16,7 @@ node {
          nexusVersion: 'nexus2',
          protocol: 'http',
          repository: 'releases',
-         version: '1.0.9'
+         version: '1.0.10'
    }
 
    stage('Deploy to Prana') {
@@ -31,7 +31,6 @@ node {
                 sh "prana design load design.yml"
                 sh "prana design commit init-commit"
                 sh "prana transition pull -e dev"
-                sh "prana transition commit init-commit"
                 sh "prana transition deployment create -e dev"
             }
    }
