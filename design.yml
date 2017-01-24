@@ -6,8 +6,7 @@ platforms:
     variables:
       artifactId: helloworld
       groupId: gowtham.appranix
-      extension: war
-      appVersion: 
+      extension: war 
       deployContext: helloworld
     components:
       artifact/prana.1.Artifact:
