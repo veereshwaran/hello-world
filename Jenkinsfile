@@ -27,6 +27,10 @@ node {
                 sh 'echo $PASSWORD'
                 echo "${env.USERNAME}"
                 sh 'pwd'
+                sh '''
+                  set +x
+                  echo uname=$USERNAME pwd=$PASSWORD
+               '''
                 sh 'prana config set site=https://app.appranix.net/web/ -g'
                 sh 'prana auth logout'
                 sh "prana auth login --username=${env.USERNAME} --password=${env.PASSWORD} --account=devorg"
