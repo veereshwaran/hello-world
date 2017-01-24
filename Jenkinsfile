@@ -16,10 +16,10 @@ node {
          nexusVersion: 'nexus2',
          protocol: 'http',
          repository: 'releases',
-         version: '1.0.6'
+         version: '1.0.7'
    }
 
-   stage('Deploy to assembly') {
+   stage('Deploy to Prana') {
       withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'ci-appranix',
                             usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
                 //available as an env variable, but will be masked if you try to print it out any which way
@@ -34,14 +34,5 @@ node {
                 sh "prana transition commit init-commit"
                 sh "prana transition deployment create -e dev"
             }
-       echo 'Deploy to assembly'
-   }
-
-   stage('Deploy to ci') {
-       echo 'Deploy to ci'
-   }
-
-   stage('Commit and Deploy to ci') {
-       echo 'Commit and Deploy to ci'
    }
 }

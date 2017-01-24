@@ -7,7 +7,7 @@ platforms:
       artifactId: helloworld
       groupId: com.appranix
       extension: war
-      appVersion: 1.0.4
+      appVersion: 1.0.7
       deployContext: helloworld
     components:
       artifact/prana.1.Artifact:
