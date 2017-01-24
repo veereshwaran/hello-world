@@ -25,7 +25,7 @@ node {
                 //available as an env variable, but will be masked if you try to print it out any which way
                 sh 'echo $PASSWORD'
                 echo "${env.USERNAME}"
-                sh 'prana auth login --username=$USERNAME --password=$PASSWORD --account=devorg --site=https://app.appranix.net/web/'
+                sh 'prana auth login --username=$USERNAME --password=$PASSWORD --account=devorg'
             }
        echo 'Deploy to assembly'
    }
