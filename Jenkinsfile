@@ -23,14 +23,6 @@ node {
       withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'ci-appranix',
                             usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
                 //available as an env variable, but will be masked if you try to print it out any which way
-                sh 'echo uname=$USERNAME pwd=$PASSWORD'
-                sh 'echo $PASSWORD'
-                echo "${env.USERNAME}"
-                sh 'pwd'
-                sh '''
-                  set +x
-                  echo uname=$USERNAME pwd=$PASSWORD
-               '''
                 sh 'prana config set site=https://app.appranix.net/web/ -g'
                 sh 'prana auth logout'
                 sh "prana auth login --username=${env.USERNAME} --password=${env.PASSWORD} --account=devorg"
