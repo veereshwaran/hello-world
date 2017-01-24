@@ -7,11 +7,11 @@ node {
 
    stage('Publish to nexus') {
       nexusArtifactUploader artifacts: [[
-                                         artifactId: 'helloworld', classifier: '',
+                                         artifactId: 'quick-demo-app', classifier: '',
                                          file: 'target/helloworld-1.0.3.war', type: 'war'
                                        ]],
          credentialsId: 'nexus',
-         groupId: 'gowtham.appranix',
+         groupId: 'com.appranix',
          nexusUrl: 'i00039.hosts.appranix.info:8081/nexus',
          nexusVersion: 'nexus2',
          protocol: 'http',
