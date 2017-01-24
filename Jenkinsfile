@@ -5,7 +5,7 @@ node {
          archive 'target/*.jar'
    }
 
-   stage('publish') {
+   stage('Publish') {
        nexusArtifactUploader {
         nexusVersion('nexus2')
         protocol('http')
