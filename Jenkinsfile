@@ -26,7 +26,7 @@ node {
                 sh 'echo $PASSWORD'
                 echo "${env.USERNAME}"
             }
-       sh 'prana auth login'
+       sh 'prana'
        echo 'Deploy to assembly'
    }
 
