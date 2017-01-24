@@ -6,7 +6,8 @@ node {
    }
 
    stage('Publish to nexus') {
-      nexusArtifactUploader artifacts: [[artifactId: 'hello', classifier: '', file: 'target/helloworld-1.0.3.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.appranix', nexusUrl: 'i00039.hosts.appranix.info:8081/nexus/', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '1'
+      nexusArtifactUploader artifacts: [[artifactId: 'helloworld', classifier: '', file: 'target/helloworld-1.0.3.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.appranix', nexusUrl: 'i00039.hosts.appranix.info:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'releases', version: '1.0.4'
+
    }
 
    stage('Deploy to assembly') {
