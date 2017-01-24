@@ -25,6 +25,7 @@ node {
                 //available as an env variable, but will be masked if you try to print it out any which way
                 sh 'echo $PASSWORD'
                 echo "${env.USERNAME}"
+                sh 'pwd'
                 sh "prana auth login --username=veereshwaran --password=veereshwaran123 --account=devorg"
             }
        sh 'prana'
