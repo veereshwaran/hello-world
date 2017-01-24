@@ -27,8 +27,11 @@ node {
                 sh 'prana auth logout'
                 sh "prana auth login --username=${env.USERNAME} --password=${env.PASSWORD} --account=devorg"
                 sh "prana config set organization=devorg-veeresh -g"
-                sh "prana config set assembly=test -g"
+                sh "prana config set assembly=demo -g"
                 sh "prana design load design.yml"
+                sh "prana design commit init-commit"
+                sh "prana transition pull -e dev"
+                sh "prana transition commit init-commit"
             }
        echo 'Deploy to assembly'
    }
