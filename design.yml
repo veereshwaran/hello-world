@@ -18,7 +18,6 @@ platforms:
       artifact/prana.1.Artifact:
         artifact:
           install_dir: /app/$AX_LOCAL{artifactId}
-          password: '::ENCRYPTED::'
           as_user: user
           restart: "execute \"rm -rf /opt/tomcat7/webapps/*.war\" \r\nexecute \"ln
             -s /app/$AX_LOCAL{artifactId}/releases/$AX_LOCAL{appVersion}/$AX_LOCAL{artifactId}-$AX_LOCAL{appVersion}.$AX_LOCAL{extension}
