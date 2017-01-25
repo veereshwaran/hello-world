@@ -32,6 +32,7 @@ node {
                 sh "prana design variable update -a demo2 --platform=helloworld appVersion=${env.BUILD_ID}"
                 sh "prana design commit init-commit"
                 sh "prana transition pull -e dev"
+                sh "prana transition component touch -e dev --platform=helloworld --component=tomcat"
                 sh "prana transition commit init-commit -e dev"
                 sh "prana transition deployment create -e dev"
             }
