@@ -2,13 +2,13 @@ node {
    stage('Build') {
          git 'https://github.com/veereshwaran/hello-world.git/'
          maven 'install'
-         archive 'target/*.jar'
+         archive 'target/*.war'
    }
 
    stage('Publish to nexus') {
       nexusArtifactUploader artifacts: [[
                                          artifactId: 'quick-demo-app', classifier: '',
-                                         file: 'target/helloworld-1.0.3.war', type: 'war'
+                                         file: 'target/quick-demo-app-1.0.0.war', type: 'war'
                                        ]],
          credentialsId: 'nexus',
          groupId: 'com.appranix',
