@@ -1,6 +1,6 @@
 node {
    stage('Build') {
-         git 'https://github.com/veereshwaran/hello-world-mvn.git/'
+         git 'https://github.com/veereshwaran/hello-world.git/'
          maven 'install'
          archive 'target/*.jar'
    }
