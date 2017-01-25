@@ -19,6 +19,7 @@ platforms:
         artifact:
           install_dir: /app/$AX_LOCAL{artifactId}
           as_user: user
+          expand: false
           restart: "execute \"rm -rf /opt/tomcat7/webapps/*.war\" \r\nexecute \"ln
             -s /app/$AX_LOCAL{artifactId}/releases/$AX_LOCAL{appVersion}/$AX_LOCAL{artifactId}-$AX_LOCAL{appVersion}.$AX_LOCAL{extension}
             /opt/tomcat7/webapps/\""
