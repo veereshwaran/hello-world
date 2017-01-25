@@ -6,6 +6,7 @@ platforms:
     variables:
       artifactId: quick-demo-app
       groupId: com.appranix
+      appVersion:104
       extension: war 
       deployContext: quick-demo-app
     components:
